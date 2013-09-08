@@ -1,11 +1,10 @@
 package
 {
-	import fp.ext.EXTConsole;
-	
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
+	import fp.ext.EXTConsole;
 	
-	[SWF(frameRate=60, width="620", height="380")]
+	[SWF(frameRate=60,width="620",height="380")]
 	public class AntiVentures extends Engine
 	{
 		public function AntiVentures()
@@ -17,7 +16,8 @@ package
 		
 		override public function init():void
 		{
-			FP.world = new AVMapWorld();
+			//FP.world = new AVMapWorld();
+			FP.world = new AVAreaWorld();
 		}
 		
 CONFIG::DEBUG

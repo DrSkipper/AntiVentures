@@ -1,5 +1,6 @@
 package
 {
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Canvas;
@@ -7,6 +8,7 @@ package
 	import net.flashpunk.graphics.Text;
 	import net.flashpunk.utils.Input;
 	import fp.ext.EXTWorld;
+	import fp.ext.EXTOffsetType;
 	
 	public class AVAreaWorld extends EXTWorld
 	{		
@@ -31,34 +33,34 @@ package
 			blackGraphic.fill(rectangle, 0x000000, 0.8);
 			addGraphic(blackGraphic);
 			
-			var cornerImage1:Image = new Image(Assets.SPEECH_BUBBLE_CORNER);
+			var cornerImage1:Image = new Image(Assets.UI_SPEECH_BUBBLE_CORNER);
 			cornerImage1.x = speechBubbleLeftX;
 			cornerImage1.y = speechBubbleTopY;
-			var cornerImage2:Image = new Image(Assets.SPEECH_BUBBLE_CORNER);
+			var cornerImage2:Image = new Image(Assets.UI_SPEECH_BUBBLE_CORNER);
 			cornerImage2.x = speechBubbleLeftX + speechBubbleWidth;
 			cornerImage2.y = speechBubbleTopY;
-			var cornerImage3:Image = new Image(Assets.SPEECH_BUBBLE_CORNER);
+			var cornerImage3:Image = new Image(Assets.UI_SPEECH_BUBBLE_CORNER);
 			cornerImage3.x = speechBubbleLeftX;
 			cornerImage3.y = speechBubbleTopY + speechBubbleHeight;
-			var cornerImage4:Image = new Image(Assets.SPEECH_BUBBLE_CORNER);
+			var cornerImage4:Image = new Image(Assets.UI_SPEECH_BUBBLE_CORNER);
 			cornerImage4.x = speechBubbleLeftX + speechBubbleWidth;
 			cornerImage4.y = speechBubbleTopY + speechBubbleHeight;
 			
-			var sideImage1:Image = new Image(Assets.SPEECH_BUBBLE_SIDE);
+			var sideImage1:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE);
 			sideImage1.scaleX = (speechBubbleWidth - cornerImage1.scaledWidth) / sideImage1.width;
 			sideImage1.x = cornerImage1.x + (cornerImage1.scaledWidth / 2) + (sideImage1.scaledWidth / 2);
 			sideImage1.y = cornerImage1.y;
-			var sideImage2:Image = new Image(Assets.SPEECH_BUBBLE_SIDE);
+			var sideImage2:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE);
 			sideImage2.scaleX = (speechBubbleWidth - cornerImage1.scaledWidth) / sideImage2.width;
 			sideImage2.x = cornerImage3.x + (cornerImage1.scaledWidth / 2) + (sideImage2.scaledWidth / 2);
 			sideImage2.y = cornerImage3.y;
-			var sideImage3:Image = new Image(Assets.SPEECH_BUBBLE_SIDE);
+			var sideImage3:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE);
 			sideImage3.scaleX = (speechBubbleHeight - cornerImage1.scaledHeight) / sideImage3.width;
 			sideImage3.x = cornerImage1.x;
 			sideImage3.y = cornerImage1.y + (cornerImage1.scaledHeight / 2) + (sideImage3.scaledWidth / 2);
 			sideImage3.centerOO();
 			sideImage3.angle = 90;
-			var sideImage4:Image = new Image(Assets.SPEECH_BUBBLE_SIDE);
+			var sideImage4:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE);
 			sideImage4.scaleX = (speechBubbleHeight - cornerImage1.scaledHeight) / sideImage4.width;
 			sideImage4.x = cornerImage4.x;
 			sideImage4.y = cornerImage1.y + (cornerImage1.scaledHeight / 2) + (sideImage4.scaledWidth / 2);
@@ -91,7 +93,10 @@ package
 			super.update();
 			
 			if (Input.mousePressed)
-				worldCamera.lerpToCameraRelativePosition(Input.mouseX, Input.mouseY);
+			{
+				var cameraPoint:Point = worldCamera.currentPosition(EXTOffsetType.CENTER);
+				worldCamera.lerpToCameraRelativePosition(Input.mouseX, cameraPoint.y, EXTOffsetType.CENTER);
+			}
 			
 			// EXTCamera force demo
 //			if (worldCamera.vx >= 5.0)

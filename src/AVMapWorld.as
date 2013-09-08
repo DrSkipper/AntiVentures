@@ -22,7 +22,7 @@ package
 			super.begin();
 			
 			var screenSize:Point = this.hoverCamera.currentViewSize();
-			var mapImage:Image = new Image(Assets.MAP_BACKGROUND);
+			var mapImage:Image = new Image(Assets.BACKGROUND_MAP);
 			mapImage.x = screenSize.x / 2;
 			mapImage.y = screenSize.y / 2;
 			mapImage.centerOO();
