@@ -2,6 +2,7 @@ package
 {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import fp.ui.UIImageView;
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Canvas;
 	import net.flashpunk.graphics.Image;
@@ -9,6 +10,7 @@ package
 	import net.flashpunk.utils.Input;
 	import fp.ext.EXTWorld;
 	import fp.ext.EXTOffsetType;
+	import fp.ext.EXTUtility;
 	
 	public class AVAreaWorld extends EXTWorld
 	{		
@@ -86,6 +88,9 @@ package
 			
 			// EXTCamera force demo
 //			this.worldCamera.applyForce(1.0, 0.0);
+			
+			var imageViewTestImage:Image = new Image(Assets.UI_SCROLL_ARROW);
+			this.staticUiController.rootView.addSubview(new UIImageView(EXTUtility.ZERO_POINT, imageViewTestImage));
 		}
 		
 		override public function update():void
