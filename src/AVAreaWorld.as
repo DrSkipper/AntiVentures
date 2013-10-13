@@ -105,6 +105,20 @@ package
 			if (Input.mousePressed)
 				worldCamera.lerpToCameraRelativePosition(Input.mouseX, FP.screen.height / 2, EXTOffsetType.CENTER);
 			
+			var mouseWheelDelta:int = Input.mouseWheelDelta;
+			if (mouseWheelDelta < 0)
+			{
+				this.worldCamera.zoom += mouseWheelDelta / 20.0;
+				if (this.worldCamera.zoom < 0.1)
+					this.worldCamera.zoom = 0.1;
+			}
+			else if (mouseWheelDelta > 0)
+			{
+				this.worldCamera.zoom += mouseWheelDelta / 20.0;
+				if (this.worldCamera.zoom > 10.0)
+					this.worldCamera.zoom = 10.0;
+			}
+			
 			// EXTCamera force demo
 //			if (worldCamera.vx >= 5.0)
 //				worldCamera.applyForce(-1.0, 0.0);
