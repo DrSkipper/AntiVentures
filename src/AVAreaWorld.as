@@ -90,7 +90,12 @@ package
 //			this.worldCamera.applyForce(1.0, 0.0);
 			
 			var imageViewTestImage:Image = new Image(Assets.UI_SCROLL_ARROW);
-			this.staticUiController.rootView.addSubview(new UIImageView(EXTUtility.ZERO_POINT, imageViewTestImage));
+			this.staticUiController.rootView.backgroundColor.setColor(1.0, 0.0, 0.0, 0.5);
+			this.relativeUiController.rootView.backgroundColor.setColor(0.0, 1.0, 0.0, 0.5);
+			var imageView:UIImageView = new UIImageView(EXTUtility.ZERO_POINT, imageViewTestImage);
+			imageView.backgroundColor.setColor(0.0, 0.0, 1.0, 0.5);
+			this.staticUiController.rootView.addSubview(imageView);
+			this.worldCamera.zoom = 0.5;
 		}
 		
 		override public function update():void
@@ -98,10 +103,7 @@ package
 			super.update();
 			
 			if (Input.mousePressed)
-			{
-				var cameraPoint:Point = worldCamera.currentPosition(EXTOffsetType.CENTER);
-				worldCamera.lerpToCameraRelativePosition(Input.mouseX, cameraPoint.y, EXTOffsetType.CENTER);
-			}
+				worldCamera.lerpToCameraRelativePosition(Input.mouseX, FP.screen.height / 2, EXTOffsetType.CENTER);
 			
 			// EXTCamera force demo
 //			if (worldCamera.vx >= 5.0)

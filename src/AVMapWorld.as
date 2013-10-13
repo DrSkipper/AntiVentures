@@ -31,6 +31,7 @@ package
 			
 			// EXTHoverCamera demo
 			this.hoverCamera.enableHovering(10, 10, 0.01);
+			this.hoverCamera.zoom = 0.5;
 		}
 		
 		override public function update():void
