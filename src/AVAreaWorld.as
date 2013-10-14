@@ -1,5 +1,6 @@
 package
 {
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	
 	import fp.ext.EXTOffsetType;
@@ -103,26 +104,6 @@ package
 		{
 			if (Input.mousePressed)
 				worldCamera.lerpToCameraRelativePosition(Input.mouseX, FP.screen.height / 2, EXTOffsetType.CENTER);
-			
-			var mouseWheelDelta:int = Input.mouseWheelDelta;
-			if (mouseWheelDelta != 0)
-			{
-				var newZoom:Number = this.worldCamera.zoom + mouseWheelDelta / 20.0;
-				
-				if (mouseWheelDelta < 0)
-				{
-					if (newZoom < 0.5)
-						newZoom = 0.5;
-				}
-				else if (mouseWheelDelta > 0)
-				{
-					if (newZoom > 2.0)
-						newZoom = 2.0;
-				}
-				
-				var zoomDelta:Number = newZoom - this.worldCamera.zoom;
-				this.worldCamera.zoomWithAnchor(zoomDelta, EXTUtility.ZERO_POINT, EXTOffsetType.CENTER);
-			}
 			
 			// EXTCamera force demo
 //			if (worldCamera.vx >= 5.0)

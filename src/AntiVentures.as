@@ -16,8 +16,8 @@ package
 		
 		override public function init():void
 		{
-			//FP.world = new AVMapWorld();
-			FP.world = new AVAreaWorld();
+			FP.world = new AVMapWorld();
+			//FP.world = new AVAreaWorld();
 		}
 		
 CONFIG::DEBUG
