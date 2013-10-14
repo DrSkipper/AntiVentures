@@ -1,16 +1,17 @@
 package
 {
-	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	
+	import fp.ext.EXTOffsetType;
+	import fp.ext.EXTUtility;
+	import fp.ext.EXTWorld;
 	import fp.ui.UIImageView;
+	
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Canvas;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Text;
 	import net.flashpunk.utils.Input;
-	import fp.ext.EXTWorld;
-	import fp.ext.EXTOffsetType;
-	import fp.ext.EXTUtility;
 	
 	public class AVAreaWorld extends EXTWorld
 	{		
@@ -95,28 +96,32 @@ package
 			var imageView:UIImageView = new UIImageView(EXTUtility.ZERO_POINT, imageViewTestImage);
 			imageView.backgroundColor.setColor(0.0, 0.0, 1.0, 0.5);
 			this.staticUiController.rootView.addSubview(imageView);
-			this.worldCamera.zoom = 0.5;
+//			this.worldCamera.zoom = 0.5;
 		}
 		
 		override public function update():void
 		{
-			super.update();
-			
 			if (Input.mousePressed)
 				worldCamera.lerpToCameraRelativePosition(Input.mouseX, FP.screen.height / 2, EXTOffsetType.CENTER);
 			
 			var mouseWheelDelta:int = Input.mouseWheelDelta;
-			if (mouseWheelDelta < 0)
+			if (mouseWheelDelta != 0)
 			{
-				this.worldCamera.zoom += mouseWheelDelta / 20.0;
-				if (this.worldCamera.zoom < 0.1)
-					this.worldCamera.zoom = 0.1;
-			}
-			else if (mouseWheelDelta > 0)
-			{
-				this.worldCamera.zoom += mouseWheelDelta / 20.0;
-				if (this.worldCamera.zoom > 10.0)
-					this.worldCamera.zoom = 10.0;
+				var newZoom:Number = this.worldCamera.zoom + mouseWheelDelta / 20.0;
+				
+				if (mouseWheelDelta < 0)
+				{
+					if (newZoom < 0.5)
+						newZoom = 0.5;
+				}
+				else if (mouseWheelDelta > 0)
+				{
+					if (newZoom > 2.0)
+						newZoom = 2.0;
+				}
+				
+				var zoomDelta:Number = newZoom - this.worldCamera.zoom;
+				this.worldCamera.zoomWithAnchor(zoomDelta, EXTUtility.ZERO_POINT, EXTOffsetType.CENTER);
 			}
 			
 			// EXTCamera force demo
@@ -127,6 +132,7 @@ package
 			
 			// EXTConsole demo
 //			EXTConsole.debug("DefaultWorld", "update()", "Update Called");
+			super.update();
 		}
 	}
 }
