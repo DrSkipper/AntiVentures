@@ -31,7 +31,7 @@ package
 			this.addGraphic(mapImage);
 			
 			// EXTHoverCamera demo
-			//this.hoverCamera.enableHovering(10, 10, 0.01);
+			this.hoverCamera.enableHovering(10, 10, 0.01);
 		}
 		
 		override public function update():void
