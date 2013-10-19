@@ -9,6 +9,7 @@ package
 	
 	public class AVMapWorld extends EXTWorld
 	{
+		public static const controllerStickThreshold:Number = 0.2;
 		public var hoverCamera:EXTHoverCamera;
 		
 		public function AVMapWorld()
@@ -31,14 +32,46 @@ package
 			this.addGraphic(mapImage);
 			
 			// EXTHoverCamera demo
-			this.hoverCamera.enableHovering(10, 10, 0.01);
+			//this.hoverCamera.enableHovering(10, 10, 0.01);
 		}
 		
 		override public function update():void
 		{
 			if (Input.mousePressed)
 				worldCamera.lerpToCameraRelativePosition(Input.mouseX, Input.mouseY);
+			
+			// Controller stuff!
+			var controllerMovement:Boolean = false;
+			if (AntiVentures.xbox360Controller != null)
+			{
+				var xAmount:Number = AntiVentures.xbox360Controller.leftStick.x;
+				var yAmount:Number = AntiVentures.xbox360Controller.leftStick.y;
 				
+				if (Math.abs(xAmount) > controllerStickThreshold || 
+					Math.abs(yAmount) > controllerStickThreshold)
+				{
+					controllerMovement = true;
+					//if (this.hoverCamera.hovering)
+						//this.hoverCamera.disableHovering();
+					
+					if (xAmount > controllerStickThreshold) 
+						xAmount -= controllerStickThreshold;
+					else if (xAmount < -controllerStickThreshold) 
+						xAmount += controllerStickThreshold;
+					if (yAmount > controllerStickThreshold) 
+						yAmount -= controllerStickThreshold;
+					else if (yAmount < -controllerStickThreshold) 
+						yAmount += controllerStickThreshold;
+					
+					this.worldCamera.moveDistance(xAmount * 10.0, 
+												 -(yAmount) * 10.0);
+				}
+			}
+			//if (!controllerMovement && !this.hoverCamera.hovering)
+			//{
+				//this.hoverCamera.enableHovering(10, 10, 0.01);
+			//}
+			
 			var mouseWheelDelta:int = Input.mouseWheelDelta;
 			if (mouseWheelDelta != 0)
 			{
