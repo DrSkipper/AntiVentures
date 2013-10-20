@@ -13,7 +13,7 @@ package
 		
 		public function AntiVentures()
 		{
-			super(620, 380, 60);
+			super(620, 380, 60, true);
 			FP.screen.color = 0xff7777;
 			EXTConsole.initializeConsole();
 		}

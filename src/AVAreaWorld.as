@@ -50,21 +50,21 @@ package
 			cornerImage4.x = speechBubbleLeftX + speechBubbleWidth;
 			cornerImage4.y = speechBubbleTopY + speechBubbleHeight;
 			
-			var sideImage1:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE);
+			var sideImage1:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE_HORIZONTAL);
 			sideImage1.scaleX = (speechBubbleWidth - cornerImage1.scaledWidth) / sideImage1.width;
 			sideImage1.x = cornerImage1.x + (cornerImage1.scaledWidth / 2) + (sideImage1.scaledWidth / 2);
 			sideImage1.y = cornerImage1.y;
-			var sideImage2:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE);
+			var sideImage2:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE_HORIZONTAL);
 			sideImage2.scaleX = (speechBubbleWidth - cornerImage1.scaledWidth) / sideImage2.width;
 			sideImage2.x = cornerImage3.x + (cornerImage1.scaledWidth / 2) + (sideImage2.scaledWidth / 2);
 			sideImage2.y = cornerImage3.y;
-			var sideImage3:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE);
+			var sideImage3:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE_VERTICAL);
 			sideImage3.scaleX = (speechBubbleHeight - cornerImage1.scaledHeight) / sideImage3.width;
 			sideImage3.x = cornerImage1.x;
 			sideImage3.y = cornerImage1.y + (cornerImage1.scaledHeight / 2) + (sideImage3.scaledWidth / 2);
 			sideImage3.centerOO();
 			sideImage3.angle = 90;
-			var sideImage4:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE);
+			var sideImage4:Image = new Image(Assets.UI_SPEECH_BUBBLE_SIDE_VERTICAL);
 			sideImage4.scaleX = (speechBubbleHeight - cornerImage1.scaledHeight) / sideImage4.width;
 			sideImage4.x = cornerImage4.x;
 			sideImage4.y = cornerImage1.y + (cornerImage1.scaledHeight / 2) + (sideImage4.scaledWidth / 2);
