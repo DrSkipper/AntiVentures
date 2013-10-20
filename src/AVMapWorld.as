@@ -31,6 +31,9 @@ package
 			
 			this.addGraphic(mapImage);
 			
+			var testDialog:AVGenericDialog = new AVGenericDialog(new Point(0, 0), new Point(200, 200));
+			this.staticUiController.rootView.addSubview(testDialog);
+			
 			// EXTHoverCamera demo
 			//this.hoverCamera.enableHovering(10, 10, 0.01);
 		}
