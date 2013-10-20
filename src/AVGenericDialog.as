@@ -1,14 +1,14 @@
 package  
 {
 	import flash.geom.Point;
-	import fp.ui.UILabel;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.graphics.Text;
 	import fp.ui.UIImageView;
 	import fp.ui.UIView;
+	import fp.ui.UILabel;
 	import fp.ext.EXTOffsetType;
 	import fp.ext.EXTConsole;
 	import fp.ext.EXTUtility;
-	import net.flashpunk.graphics.Text;
 	
 	/**
 	 * AVGenericDialog
