@@ -29,7 +29,7 @@ package
 		{
 			super.update();
 			
-CONFIG::DEBUG
+CONFIG::debug
 {
 			EXTConsole.update();
 }
