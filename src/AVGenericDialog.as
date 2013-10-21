@@ -2,6 +2,7 @@ package
 {
 	import flash.geom.Point;
 	import net.extendedpunk.ui.UIButton;
+	import net.extendedpunk.ui.UISmartImageStretchView;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Text;
 	import net.extendedpunk.ui.UIImageView;
@@ -61,6 +62,9 @@ package
 			button.offsetAlignmentInParent = EXTOffsetType.BOTTOM_CENTER;
 			button.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_CENTER;
 			
+			// Stretch Image View
+			var stretchImageView:UISmartImageStretchView = new UISmartImageStretchView(EXTUtility.ZERO_POINT, new Point(size.x * 2 / 3, 50), Assets.UI_BUTTON_ENABLED);
+			
 			// Set up the subviews
 			this.backgroundColor.setColor(0, 0, 0, 0.8);
 			this.addSubview(topImageView);
@@ -73,6 +77,7 @@ package
 			this.addSubview(botLeftCornerImageView);
 			this.addSubview(titleLabel);
 			this.addSubview(button);
+			this.addSubview(stretchImageView);
 		}
 	}
 }
