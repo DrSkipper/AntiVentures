@@ -3,9 +3,9 @@ package
 	import flash.geom.Point;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.utils.Input;
-	import fp.ext.EXTHoverCamera;
-	import fp.ext.EXTWorld;
-	import fp.ext.EXTOffsetType;
+	import net.extendedpunk.ext.EXTHoverCamera;
+	import net.extendedpunk.ext.EXTWorld;
+	import net.extendedpunk.ext.EXTOffsetType;
 	
 	public class AVMapWorld extends EXTWorld
 	{

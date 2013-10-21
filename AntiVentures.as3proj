@@ -16,9 +16,9 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="..\FlashPunk-1.7.1" />
-    <class path="..\ExtendedFlashpunk" />
     <class path="..\as3-controller-input\src" />
+    <class path="..\ExtendedFlashpunk\src" />
+    <class path="..\ExtendedFlashpunk\FlashPunk" />
   </classpaths>
   <!-- Build options -->
   <build>

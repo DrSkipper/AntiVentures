@@ -3,10 +3,10 @@ package
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	
-	import fp.ext.EXTOffsetType;
-	import fp.ext.EXTUtility;
-	import fp.ext.EXTWorld;
-	import fp.ui.UIImageView;
+	import net.extendedpunk.ext.EXTOffsetType;
+	import net.extendedpunk.ext.EXTUtility;
+	import net.extendedpunk.ext.EXTWorld;
+	import net.extendedpunk.ui.UIImageView;
 	
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Canvas;

@@ -3,12 +3,12 @@ package
 	import flash.geom.Point;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Text;
-	import fp.ui.UIImageView;
-	import fp.ui.UIView;
-	import fp.ui.UILabel;
-	import fp.ext.EXTOffsetType;
-	import fp.ext.EXTConsole;
-	import fp.ext.EXTUtility;
+	import net.extendedpunk.ui.UIImageView;
+	import net.extendedpunk.ui.UIView;
+	import net.extendedpunk.ui.UILabel;
+	import net.extendedpunk.ext.EXTOffsetType;
+	import net.extendedpunk.ext.EXTConsole;
+	import net.extendedpunk.ext.EXTUtility;
 	
 	/**
 	 * AVGenericDialog

@@ -4,7 +4,7 @@ package
 	import net.flashpunk.FP;
 	import io.arkeus.ouya.ControllerInput;
 	import io.arkeus.ouya.controller.Xbox360Controller;
-	import fp.ext.EXTConsole;
+	import net.extendedpunk.ext.EXTConsole;
 	
 	[SWF(frameRate=60,width="620",height="380")]
 	public class AntiVentures extends Engine

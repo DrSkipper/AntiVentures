@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'10/19/2013'</value>
+      <value>'10/20/2013'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -33,9 +33,9 @@
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
       <path-element>E:\code\github\flashpunk\AntiVentures\src</path-element>
-      <path-element>E:\code\github\flashpunk\FlashPunk-1.7.1</path-element>
-      <path-element>E:\code\github\flashpunk\ExtendedFlashpunk</path-element>
       <path-element>E:\code\github\flashpunk\as3-controller-input\src</path-element>
+      <path-element>E:\code\github\flashpunk\ExtendedFlashpunk\src</path-element>
+      <path-element>E:\code\github\flashpunk\ExtendedFlashpunk\FlashPunk</path-element>
       <path-element>E:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
