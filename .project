@@ -21,9 +21,14 @@
 			<location>/usr/local/flashpunk/ExtendedFlashpunk</location>
 		</link>
 		<link>
-			<name>[source path] flashpunk-src</name>
+			<name>[source path] FlashPunk</name>
 			<type>2</type>
-			<location>/usr/local/flashpunk/flashpunk-src</location>
+			<location>/usr/local/flashpunk/FlashPunk</location>
+		</link>
+		<link>
+			<name>[source path] src</name>
+			<type>2</type>
+			<location>/usr/local/flashpunk/as3-controller-input/src</location>
 		</link>
 	</linkedResources>
 </projectDescription>
