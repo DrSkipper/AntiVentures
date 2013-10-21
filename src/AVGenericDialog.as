@@ -1,11 +1,13 @@
 package  
 {
 	import flash.geom.Point;
+	import net.extendedpunk.ui.UIButton;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Text;
 	import net.extendedpunk.ui.UIImageView;
 	import net.extendedpunk.ui.UIView;
 	import net.extendedpunk.ui.UILabel;
+	import net.extendedpunk.ui.UIButton;
 	import net.extendedpunk.ext.EXTOffsetType;
 	import net.extendedpunk.ext.EXTConsole;
 	import net.extendedpunk.ext.EXTUtility;
@@ -52,6 +54,13 @@ package
 			titleLabel.offsetAlignmentInParent = EXTOffsetType.TOP_CENTER;
 			titleLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
 			
+			// Buttons
+			var buttonText:Text = new Text("button");
+			var buttonEnabledImage:Image = new Image(Assets.UI_BUTTON_ENABLED);
+			var button:UIButton = new UIButton(new Point(0, -10), new Point(size.x * 2 / 3, 50), buttonEnabledImage, buttonText);
+			button.offsetAlignmentInParent = EXTOffsetType.BOTTOM_CENTER;
+			button.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_CENTER;
+			
 			// Set up the subviews
 			this.backgroundColor.setColor(0, 0, 0, 0.8);
 			this.addSubview(topImageView);
@@ -63,6 +72,7 @@ package
 			this.addSubview(botRightCornerImageView);
 			this.addSubview(botLeftCornerImageView);
 			this.addSubview(titleLabel);
+			this.addSubview(button);
 		}
 	}
 }
