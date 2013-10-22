@@ -1,6 +1,7 @@
 package  
 {
 	import flash.geom.Point;
+	import flash.system.ImageDecodingPolicy;
 	import net.extendedpunk.ui.UIButton;
 	import net.extendedpunk.ui.UISmartImageStretchView;
 	import net.flashpunk.graphics.Image;
@@ -55,12 +56,23 @@ package
 			titleLabel.offsetAlignmentInParent = EXTOffsetType.TOP_CENTER;
 			titleLabel.offsetAlignmentForSelf = EXTOffsetType.TOP_CENTER;
 			
-			// Buttons
-			var buttonText:Text = new Text("button");
+			// Button
 			var buttonEnabledImage:Image = new Image(Assets.UI_BUTTON_ENABLED);
-			var button:UIButton = new UIButton(new Point(0, -10), new Point(size.x * 2 / 3, 50), buttonEnabledImage, buttonText);
+			var buttonEnabledText:Text = new Text("enabled", 0, 0, { "color" : 0x000000 } );
+			var button:UIButton = new UIButton(new Point(0, -10), new Point(size.x * 2 / 3, 50), buttonEnabledImage, buttonEnabledText, didClickButton, "button");
 			button.offsetAlignmentInParent = EXTOffsetType.BOTTOM_CENTER;
 			button.offsetAlignmentForSelf = EXTOffsetType.BOTTOM_CENTER;
+			button.disabledImage = new Image(Assets.UI_BUTTON_DISABLED);
+			button.disabledText = new Text("disabled", 0, 0, { "color" : 0xFFFFFF } );
+			button.hoveringImage = new Image(Assets.UI_BUTTON_HOVERING);
+			button.hoveringText = new Text("hovering", 0, 0, { "color" : 0x444488 } );
+			button.selectedImage = new Image(Assets.UI_BUTTON_SELECTED);
+			button.selectedText = new Text("selected", 0, 0, { "color" : 0x448844 } );
+			button.pressedImage = new Image(Assets.UI_BUTTON_PRESSED);
+			button.pressedText = new Text("pressed", 0, 0, { "color" : 0x884444 } );
+			button.selectedHoveringImage = new Image(Assets.UI_BUTTON_SELECTED_HOVERING);
+			button.selectedHoveringText = new Text("s. hover", 0, 0, { "color" : 0x444488 } );
+			button.selectable = true;
 			
 			// Stretch Image View
 			var stretchImageView:UISmartImageStretchView = new UISmartImageStretchView(EXTUtility.ZERO_POINT, new Point(size.x * 2 / 3, 50), Assets.UI_BUTTON_ENABLED);
@@ -78,6 +90,16 @@ package
 			this.addSubview(titleLabel);
 			this.addSubview(button);
 			this.addSubview(stretchImageView);
+		}
+		
+		public function didClickButton(buttonName:String = null):void
+		{
+			if (buttonName == "button")
+				EXTConsole.debug("AVGenericDialog", "didClickButton()", "buttonName is button");
+			else if (buttonName != null)
+				EXTConsole.debug("AVGenericDialog", "didClickButton()", "buttonName is not button, but not null");
+			else
+				EXTConsole.debug("AVGenericDialog", "didClickButton()", "buttonName is null");
 		}
 	}
 }

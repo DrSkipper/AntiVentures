@@ -12,6 +12,7 @@ package
 		[Embed(source = "../assets/gfx/ui/button_hover_32x32.png")] public static const UI_BUTTON_HOVERING:Class;
 		[Embed(source = "../assets/gfx/ui/button_pressed_32x32.png")] public static const UI_BUTTON_PRESSED:Class;
 		[Embed(source = "../assets/gfx/ui/button_selected_32x32.png")] public static const UI_BUTTON_SELECTED:Class;
+		[Embed(source = "../assets/gfx/ui/button_selected_hover_32x32.png")] public static const UI_BUTTON_SELECTED_HOVERING:Class;
 		
 		// Backgrounds
 		[Embed(source = "../assets/gfx/backgrounds/PLACEHOLDER_fantasy_map.jpg")] public static const BACKGROUND_MAP:Class;
