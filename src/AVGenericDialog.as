@@ -7,7 +7,6 @@ package
 	import net.extendedpunk.ui.UIButton;
 	import net.extendedpunk.ui.UIImageView;
 	import net.extendedpunk.ui.UILabel;
-	import net.extendedpunk.ui.UISmartImageStretchView;
 	import net.extendedpunk.ui.UISmartStretchButton;
 	import net.extendedpunk.ui.UIView;
 	import net.flashpunk.graphics.Image;
@@ -73,9 +72,6 @@ package
 			button.selectedHoveringText = new Text("s. hover", 0, 0, { "color" : 0x444488 } );
 			button.selectable = true;
 			
-			// Stretch Image View
-//			var stretchImageView:UISmartImageStretchView = new UISmartImageStretchView(EXTUtility.ZERO_POINT, new Point(size.x * 2 / 3, 50), Assets.UI_BUTTON_ENABLED);
-			
 			// Stretch Button
 			var stretchButton:UISmartStretchButton = new UISmartStretchButton(EXTUtility.ZERO_POINT, new Point(size.x * 2 / 3, 50), 
 															Assets.UI_BUTTON_ENABLED,
@@ -106,7 +102,6 @@ package
 			this.addSubview(botLeftCornerImageView);
 			this.addSubview(titleLabel);
 			this.addSubview(button);
-//			this.addSubview(stretchImageView);
 			this.addSubview(stretchButton);
 		}
 		
