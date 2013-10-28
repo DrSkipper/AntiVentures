@@ -40,9 +40,6 @@ package
 		
 		override public function update():void
 		{
-			if (Input.mousePressed)
-				worldCamera.lerpToCameraRelativePosition(Input.mouseX, Input.mouseY);
-			
 			// Controller stuff!
 			var controllerMovement:Boolean = false;
 			if (AntiVentures.xbox360Controller != null)
@@ -70,30 +67,41 @@ package
 												 -(yAmount) * 10.0);
 				}
 			}
-			//if (!controllerMovement && !this.hoverCamera.hovering)
-			//{
-				//this.hoverCamera.enableHovering(10, 10, 0.01);
-			//}
 			
-			var mouseWheelDelta:int = Input.mouseWheelDelta;
-			if (mouseWheelDelta != 0)
+			// Don't allow mouse to interact with world if it is over the UI
+			if (!this.staticUiController.rootView.mouseIsOverViewOrSubviews)
 			{
-				var newZoom:Number = this.worldCamera.zoom + mouseWheelDelta / 20.0;
+				// Camera hover
+				//if (!controllerMovement && !this.hoverCamera.hovering)
+				//{
+					//this.hoverCamera.enableHovering(10, 10, 0.01);
+				//}
 				
-				if (mouseWheelDelta < 0)
-				{
-					if (newZoom < 0.5)
-						newZoom = 0.5;
-				}
-				else if (mouseWheelDelta > 0)
-				{
-					if (newZoom > 2.0)
-						newZoom = 2.0;
-				}
+				// Camera lerp
+				if (Input.mousePressed)
+					worldCamera.lerpToCameraRelativePosition(Input.mouseX, Input.mouseY);
 				
-				var zoomDelta:Number = newZoom - this.worldCamera.zoom;
-				var mousePoint:Point = new Point(-Input.mouseX / this.worldCamera.zoom, -Input.mouseY / this.worldCamera.zoom);
-				this.worldCamera.zoomWithAnchor(zoomDelta, mousePoint, EXTOffsetType.TOP_LEFT);
+				// Camera zoom
+				var mouseWheelDelta:int = Input.mouseWheelDelta;
+				if (mouseWheelDelta != 0)
+				{
+					var newZoom:Number = this.worldCamera.zoom + mouseWheelDelta / 20.0;
+					
+					if (mouseWheelDelta < 0)
+					{
+						if (newZoom < 0.5)
+							newZoom = 0.5;
+					}
+					else if (mouseWheelDelta > 0)
+					{
+						if (newZoom > 2.0)
+							newZoom = 2.0;
+					}
+					
+					var zoomDelta:Number = newZoom - this.worldCamera.zoom;
+					var mousePoint:Point = new Point(-Input.mouseX / this.worldCamera.zoom, -Input.mouseY / this.worldCamera.zoom);
+					this.worldCamera.zoomWithAnchor(zoomDelta, mousePoint, EXTOffsetType.TOP_LEFT);
+				}
 			}
 			
 			super.update();
