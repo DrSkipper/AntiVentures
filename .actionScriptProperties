@@ -2,9 +2,9 @@
 <actionScriptProperties analytics="false" mainApplicationPath="AntiVentures.as" projectUUID="7599cf52-d03d-4ff4-a616-def9ba207977" version="11">
   <compiler additionalCompilerArguments="-locale en_US -default-size 640 480 -define+=CONFIG::debug,true" advancedTelemetry="false" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="true" useFlashSDK="true" verifyDigests="true" warn="true">
     <compilerSourcePath>
-      <compilerSourcePathEntry kind="1" linkType="1" path="/usr/local/flashpunk/FlashPunk"/>
-      <compilerSourcePathEntry kind="1" linkType="1" path="/usr/local/flashpunk/ExtendedFlashpunk"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="/usr/local/flashpunk/ExtendedFlashpunk/src"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="/usr/local/flashpunk/as3-controller-input/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="/usr/local/flashpunk/ExtendedFlashpunk/FlashPunk"/>
     </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">

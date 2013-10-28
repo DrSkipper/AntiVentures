@@ -16,17 +16,17 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>[source path] ExtendedFlashpunk</name>
+			<name>[source path] ExtendedFlashpunk-src</name>
 			<type>2</type>
-			<location>/usr/local/flashpunk/ExtendedFlashpunk</location>
+			<location>/usr/local/flashpunk/ExtendedFlashpunk/src</location>
 		</link>
 		<link>
 			<name>[source path] FlashPunk</name>
 			<type>2</type>
-			<location>/usr/local/flashpunk/FlashPunk</location>
+			<location>/usr/local/flashpunk/ExtendedFlashpunk/FlashPunk</location>
 		</link>
 		<link>
-			<name>[source path] src</name>
+			<name>[source path] as3-controller-input-src</name>
 			<type>2</type>
 			<location>/usr/local/flashpunk/as3-controller-input/src</location>
 		</link>

@@ -1,18 +1,17 @@
 package  
 {
 	import flash.geom.Point;
-	import flash.system.ImageDecodingPolicy;
+	import net.extendedpunk.ext.EXTConsole;
+	import net.extendedpunk.ext.EXTOffsetType;
+	import net.extendedpunk.ext.EXTUtility;
 	import net.extendedpunk.ui.UIButton;
+	import net.extendedpunk.ui.UIImageView;
+	import net.extendedpunk.ui.UILabel;
 	import net.extendedpunk.ui.UISmartImageStretchView;
+	import net.extendedpunk.ui.UISmartStretchButton;
+	import net.extendedpunk.ui.UIView;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Text;
-	import net.extendedpunk.ui.UIImageView;
-	import net.extendedpunk.ui.UIView;
-	import net.extendedpunk.ui.UILabel;
-	import net.extendedpunk.ui.UIButton;
-	import net.extendedpunk.ext.EXTOffsetType;
-	import net.extendedpunk.ext.EXTConsole;
-	import net.extendedpunk.ext.EXTUtility;
 	
 	/**
 	 * AVGenericDialog
@@ -75,7 +74,25 @@ package
 			button.selectable = true;
 			
 			// Stretch Image View
-			var stretchImageView:UISmartImageStretchView = new UISmartImageStretchView(EXTUtility.ZERO_POINT, new Point(size.x * 2 / 3, 50), Assets.UI_BUTTON_ENABLED);
+//			var stretchImageView:UISmartImageStretchView = new UISmartImageStretchView(EXTUtility.ZERO_POINT, new Point(size.x * 2 / 3, 50), Assets.UI_BUTTON_ENABLED);
+			
+			// Stretch Button
+			var stretchButton:UISmartStretchButton = new UISmartStretchButton(EXTUtility.ZERO_POINT, new Point(size.x * 2 / 3, 50), 
+															Assets.UI_BUTTON_ENABLED,
+															Assets.UI_BUTTON_DISABLED,
+															Assets.UI_BUTTON_HOVERING,
+															Assets.UI_BUTTON_PRESSED,
+															Assets.UI_BUTTON_SELECTED,
+															Assets.UI_BUTTON_SELECTED_HOVERING,
+															buttonEnabledText,
+															didClickButton,
+															"stretch_button");
+			stretchButton.disabledText = button.disabledText;
+			stretchButton.hoveringText = button.hoveringText;
+			stretchButton.pressedText = button.pressedText;
+			stretchButton.selectedText = button.selectedText;
+			stretchButton.selectedHoveringText = button.selectedHoveringText;
+			stretchButton.selectable = true;
 			
 			// Set up the subviews
 			this.backgroundColor.setColor(0, 0, 0, 0.8);
@@ -89,13 +106,16 @@ package
 			this.addSubview(botLeftCornerImageView);
 			this.addSubview(titleLabel);
 			this.addSubview(button);
-			this.addSubview(stretchImageView);
+//			this.addSubview(stretchImageView);
+			this.addSubview(stretchButton);
 		}
 		
 		public function didClickButton(buttonName:String = null):void
 		{
 			if (buttonName == "button")
 				EXTConsole.debug("AVGenericDialog", "didClickButton()", "buttonName is button");
+			else if (buttonName == "stretch_button")
+				EXTConsole.debug("AVGenericDialog", "didClickButton()", "buttonName is stretch_button");
 			else if (buttonName != null)
 				EXTConsole.debug("AVGenericDialog", "didClickButton()", "buttonName is not button, but not null");
 			else
