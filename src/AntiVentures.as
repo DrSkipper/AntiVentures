@@ -21,8 +21,8 @@ package
 		override public function init():void
 		{
 			ControllerInput.initialize(FP.stage);
-			FP.world = new AVMapWorld();
-			//FP.world = new AVAreaWorld();
+//			FP.world = new AVMapWorld();
+			FP.world = new AVAreaWorld();
 		}
 		
 		override public function update():void
